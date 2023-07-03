@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Slider -->
-    <section class="section-slide">
+    <section class="section-slide p-b-60">
         <div class="wrap-slick1">
             <div class="slick1">
                 <div class="item-slick1"
@@ -86,6 +86,23 @@
         </div>
     </section>
 
+    <!-- Animated Number Counter Section -->
+    <div class="section-counter ">
+        <div class="container grid cl5">
+            <div class="box bg6 p-b-10">
+                <span class="ltext-106 sta" data-max="17">0</span>
+                <span class="data">Years</span>
+            </div>
+            <div class="box bg6 p-b-10">
+                <span class="ltext-106 sta" data-max="15">0</span>
+                <span class="data">Branches</span>
+            </div>
+            <div class="box bg6 p-b-10 sta">
+                <span class="ltext-106 sta" data-max="1000">0</span>
+                <span class="data">Clients</span>
+            </div>
+        </div>
+    </div>
 
     <!-- Content page -->
     <section class="bg0 p-t-50">
@@ -173,7 +190,8 @@
                         </div>
                     </a>
                     <div class="hov-img0">
-                        <img src="{{ URL::asset('/template/images/ads/h1-banner4.jpg') }}" height="270px" alt="IMG">
+                        <img src="{{ URL::asset('/template/images/ads/h1-banner4.jpg') }}" height="270px"
+                            alt="IMG">
                     </div>
 
                     <a href="{{ url('/') }}" class="ab-t-l flex-col-l-sb p-lr-38 p-t-350 ">
@@ -1739,7 +1757,8 @@
                         </h3>
 
                         <p class="stext-113 cl6 p-b-26">
-                            Our Office Supplies Will Help You Organize Your Workspace From All Kinds Of Desk Essentials To
+                            Our Office Supplies Will Help You Organize Your Workspace From All Kinds Of Desk Essentials
+                            To
                             Top Quality Staplers, Calculators And Organizers.
                         </p>
 
@@ -1902,4 +1921,103 @@
             </div>
         </div>
     </section>
+
+    <script>
+        // let section = document.querySelector(".section-counter");
+        // let innersec = document.querySelectorAll(" .container .box .sta");
+        // let start = false;
+
+        // window.onScroll = function() {
+        //     if (window.scrollY >= section.offsetTop) {
+        //         if (!start) {
+        //             innersec.forEach((sta) => startCount(sta));
+        //         }
+        //         start = true;
+        //     }
+        // }
+
+        // function startCount(el) {
+        //     let max = el.dataset.max;
+        //     let count = setInterval(() => {
+        //         el.textContent++;
+        //         if (el.textContent == max) {
+        //             clearInterval(count);
+        //         }
+        //     }, 2000 / innersec);
+        // }
+
+
+        // let valueDisplays = document.querySelectorAll(".sta");
+        // let interval = 4000;
+
+        // valueDisplays.forEach((valueDisplay) => {
+        //     let startvalue = 0;
+        //     let endValue = parseInt(valueDisplay.getAttribute("data-max"));
+        //     let duration = Math.floor(interval / endValue);
+        //     let counter = setInterval(function() => {
+        //         startValue += 1;
+        //         valueDisplay.textContent = startvalue;
+        //         if (startvalue == endValue) {
+        //             clearInterval(counter);
+        //         }
+        //     }, duration);
+        // });
+    </script>
+
+    {{-- <script>
+        let sections = document.querySelectorAll(".section-counter");
+        let innersec = document.querySelectorAll(".container .box .sta");
+        let start = false;
+
+        window.addEventListener('scroll', function() {
+            sections.forEach((section) => {
+                if (window.scrollY >= section.offsetTop) {
+                    if (!start) {
+                        innersec.forEach((sta) => startCount(sta));
+                    }
+                    start = true;
+                }
+            });
+        });
+
+        function startCount(el) {
+            let max = el.dataset.max;
+            let count = setInterval(() => {
+                el.textContent++;
+                if (el.textContent == max) {
+                    clearInterval(count);
+                }
+            }, 10);
+        }
+    </script> --}}
+    <script>
+        let sections = document.querySelectorAll(".section-counter");
+        let innersec = document.querySelectorAll(".container .box .sta");
+        let start = false;
+
+        let observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (!start) {
+                        innersec.forEach((sta) => startCount(sta));
+                    }
+                    start = true;
+                }
+            });
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        function startCount(el) {
+            let max = el.dataset.max;
+            let count = setInterval(() => {
+                el.textContent++;
+                if (el.textContent == max) {
+                    clearInterval(count);
+                }
+            }, 10);
+        }
+    </script>
 @endsection
