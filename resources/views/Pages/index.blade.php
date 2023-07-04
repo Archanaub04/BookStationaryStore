@@ -88,18 +88,18 @@
 
     <!-- Animated Number Counter Section -->
     <div class="section-counter ">
-        <div class="container grid cl5">
+        <div class="container grid ">
             <div class="box bg6 p-b-10">
-                <span class="ltext-106 sta" data-max="17">0</span>
+                <span class="ltext-106 sta p-b-10 cl5" data-max="17">0</span>
                 <span class="data">Years</span>
             </div>
             <div class="box bg6 p-b-10">
-                <span class="ltext-106 sta" data-max="15">0</span>
+                <span class="ltext-106 sta p-b-10 cl5" data-max="15">0</span>
                 <span class="data">Branches</span>
             </div>
             <div class="box bg6 p-b-10 sta">
-                <span class="ltext-106 sta" data-max="1000">0</span>
-                <span class="data">Clients</span>
+                <span class="ltext-106 sta p-b-10 cl5" data-max="1000">0</span>
+                <span class="data ">Clients</span>
             </div>
         </div>
     </div>

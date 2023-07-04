@@ -3371,13 +3371,20 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .box {
-    height: 100px;
+    height: 140px;
     margin: 10px 0;
     padding: 20px 0;
-    background-color: #f8f3f3;
+    background-color: #FAFAFA;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 10px;
+}
+.data {
+    border: 1px solid #eeebeb;
+    padding: 5px 80px;
+    background-color: #eeebeb;
+    border-radius: 30px;
 }
 
 
